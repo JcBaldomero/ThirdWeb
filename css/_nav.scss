@@ -1,0 +1,274 @@
+@import "./mixins";
+
+
+nav{
+    width: 100%;
+    height: 10vh;
+    background-color: white;
+    @include flexBox(center, center, row);
+     position: sticky;
+     top: 0;
+     z-index: 99;
+
+}
+// Logo
+.logo{
+    width: 40%;
+    @include flexBox(center,center,row);
+    h1{
+        margin: 1.5rem 0rem;
+        color: $linktext;
+        font-size:clamp(1.5rem, 1.3vw, 40rem);
+        font-weight: 300;
+        transition: .3s ease;
+        &:hover{
+            color: $textHover;
+        }
+    }
+    i{
+        display: none;
+        transition: .5s ease;
+        &:hover{
+            color: $textHover
+        }
+    }
+}
+
+// Nav Links
+.navlink-container{
+    @include flexBox(center, center, row);
+    width: 60%;
+    ul{
+        width: 100%;
+        @include flexBox(center, center,row);
+        li,a{
+            margin: 0rem 1rem;
+            font-size: clamp(1rem, 1vw, 20rem);
+            color: $linktext;
+            font-weight: 200;
+            cursor: pointer;
+            transition: .3s ease;
+            &:hover{
+                color: $textHover;
+            }
+    }
+  }
+}
+
+
+
+
+
+// dropdowns
+.dropdown{
+    display: inline-block;
+    position: relative;
+    z-index: 99;
+
+    i{
+        transition: .3s ease-out;
+    }
+    &:hover i{
+        transform: rotate(180deg);
+    }
+    .dropdwn-content{
+        width: 100%;
+        @include flexBox(center,center,column);
+        opacity: 0;
+        visibility: hidden;
+        padding: 1rem 0rem;
+        text-align: center;
+        background-color: white;
+        z-index: 3;
+        position: absolute;
+        transition: .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    }  
+    &:hover  .dropdwn-content{
+    opacity: 1;
+    visibility: visible;
+    a,i{
+        font-size: clamp(1rem, 1vw, 10rem);
+        padding: 1rem 0rem;
+        &:hover{
+        color: $textHover;
+        }
+    }
+} 
+   
+}
+
+.dropdown2{
+    display: inline-block;
+    position: relative;
+    #drop-i{
+        transform: rotate(270deg);
+        transition: .3s ease-out;
+    }
+    &:hover #drop-i{
+        transform: rotate(360deg);
+    }
+    .dropdwn-content2{
+        @include flexBox(center,center,column);
+        background-color: white;
+        text-align: center;
+        opacity: 0;
+        width: 100%;
+        padding: 1rem 1rem;
+        z-index: 3;
+        transition: .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        position: absolute;
+        top: 50%;
+        left: 101%;
+    }
+}
+.dropdown2:hover  .dropdwn-content2{
+    opacity: 1;
+    a,i{
+        padding: 1rem 0rem;
+        font-size: (1rem, 1vw, 4rem);
+    &:hover{
+        color: $textHover;
+        }
+    }
+} 
+
+
+
+
+// Search Bar
+.search-container{
+    padding: .5rem;
+    @include flexBox(center,center ,row );
+    .sarch{
+        font-size: clamp(1rem, .8vw, 2rem);
+    }
+    
+    .search{
+        width: 100%;
+    }
+    input[type=search]{
+        opacity: 0;
+        width: 0%;
+        padding: .5rem 0rem;
+        border: 1px solid rgba(0, 0, 0, 0.171);
+        border-radius: .3rem;
+        color: $textHover;
+        font-size: 1rem;
+        outline: none;
+        transition: all .8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        caret-color: $textHover;
+    }
+
+        &:hover input[type=search]{
+        opacity: 1;
+        width: 85%;
+
+        // Removes X inside Search bar...
+        input[type="search"]::-webkit-search-cancel-button,
+        input[type="search"]::-webkit-search-results-button,
+        input[type="search"]::-webkit-search-results-decoration { display: none; }
+    } 
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Media queries 
+@media (max-width:980px){
+    nav{
+        height: 10vh;
+    }
+
+    .logo{
+        width: 100%;
+        justify-content: space-around;
+        i{
+            display: inline;
+        }
+    }
+    .navlink-container{
+        display: none;
+    }
+
+    .navlink-container.toggleNav{ 
+        width: 100%;
+        @include flexBox(center,center ,column );
+        display: block;
+        position: absolute;
+        top: 100%;
+        background-color: white;
+        z-index: 99;
+        ul{
+            @include flexBox(center, center ,column );
+        li{
+            padding: 1rem 0rem;
+        }
+        }
+    }
+
+    .dropdown{
+    width: 100%;
+    text-align: center;
+    i{
+        display: none;
+    }
+    .dropdwn-content{
+        i{
+            display: none;
+        }
+    }
+}
+
+.search{
+    @include flexBox(center,center , row-reverse );
+
+    input[type=search]{
+        width: 80%;
+        display: inline;
+        opacity: 1;
+        margin-left: 1rem;
+    }
+}
+
+}
+
+// Landscape mode for mobile
+@media (max-width:900px) and (min-width:660px) and (orientation:landscape){
+    nav{
+        height: 15vh;
+    }
+}
+
+
+
+
+
+// Ipad 
+@media (min-width:720px) and (max-width:1030px){
+
+
+
+    .search-container{
+        display: none;
+    }
+    .dropdown{
+        i{
+            display: none;
+        }
+    }
+}

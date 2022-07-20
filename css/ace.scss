@@ -1,0 +1,204 @@
+/** @format */
+
+/* import */
+@import './mixins';
+@import './nav';
+@import './footer';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: $fontFam1;
+}
+
+
+
+// .ace-container{
+//   width: 100%; height: 100vh;
+
+//   .ace-text{
+//     width: 100%;
+//     @include flexBox(center,center,column);
+//     text-align: center;
+//     h2{
+//       font-size: clamp(1.5rem, 2.5rem, 4vw);
+//       margin-bottom: 1rem;
+//     }
+//     p{
+//       font-family: $fontFam2;
+//     }
+//   }
+//   .ace-vid-container{
+//     width: 100%; height: 90%;
+//     @include flexBox(center,center,row);
+
+//   .ace-vid-slider{
+//     width: 80%; height: 70%;
+//     @include flexBox(center,center,row);
+//     position: relative;
+    
+//   .ace-vid{
+//     width: 70%; height: 100%;
+//   video{
+//     width: 100%; height:100%;
+//   }
+//   }
+
+
+
+
+
+  
+//   button{
+//     padding:.5rem 1.5rem;
+//     font-size: 1.5rem;
+//     border: none;
+//     box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.342);
+//     transition: .5s ease;
+
+//     &:hover{
+//       color: $whiteHeaders;
+//       background-color: $textHover;
+//     }
+//   }
+//   .prev{
+//     position: absolute;
+//     top: 50%;
+//     left: 5%;
+//   }
+//   .next{
+//     position: absolute;
+//     top: 50%;
+//     right: 5%;
+//   }
+//   }
+
+
+//   }
+// }
+
+
+
+
+
+.ace-container{
+  width: 100%; height: 100vh;
+}
+
+
+
+
+
+
+//   
+// 
+// 
+// 
+// 
+// Media Queries
+
+/**
+ * /* 
+ *   ##Device = Most of the Smartphones Mobiles (Portrait)
+ *   ##Screen = 320px to 479px
+ *
+ * @format
+ */
+
+ @media (min-width: 240px) and (max-width: 480px){
+  .ace-container{
+  height: 80vh;
+    .ace-text{
+      width: 100%;
+      @include flexBox(center,center,column);
+    
+    }
+    .ace-vid-container{
+      width: 100%; height: 50%;
+  
+    .ace-vid-slider{
+      width: 100%; height: 100%;
+
+      
+    .ace-vid{
+      width: 90%; 
+
+    }
+  
+    .prev{
+      top: 105%;
+    }
+    .next{
+      top: 105%;
+    }
+    }
+  
+  
+    }
+  }
+  
+  
+  
+  
+ 
+  
+  }
+  
+  /* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = 481px to 767px
+  */
+  
+  @media (min-width: 565px) and (max-width: 960px) and (orientation: landscape) {
+   .ace-container{
+     height: 150vh;
+    .ace-vid-container{
+
+    .ace-vid-slider{
+      width: 200%;
+    }
+    }
+  }
+  }
+  
+  
+  
+  /* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen =  768px to 1024px
+  */
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait)  {
+     .ace-container{
+      height: 80vh;
+      .ace-vid-container{
+
+      .ace-vid-slider{
+        width: 100%;
+      .ace-vid{
+        height: 60%;
+      }
+      }  
+      }
+     }
+  }
+  
+  /* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 960px) and (max-width: 1300px) and (orientation: landscape) {
+     
+  }
+  
+  /* 
+  ##Device = Laptop(portrait)
+  ##Screen = B/w 1200px to 1450px
+  */
+  @media (min-width: 1200px) and (max-width: 1450px) {
+   
+  }
+  

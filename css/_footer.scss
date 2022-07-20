@@ -1,0 +1,89 @@
+// Footer Section
+footer{
+    width: 100%;
+    height: 10vh;
+    background-color:rgb(14, 16, 21);
+    color: $whiteHeaders;
+    @include flexBox(space-around,center, row);
+    .footer-text{
+      width: auto;
+      height: auto;
+  
+    }
+  
+    .footer-social{
+      width: auto;
+      height: auto;
+      i{
+        margin: 0rem .5rem;
+        font-size: 1.3rem;
+        transition: all .3s ease-in;
+      &:hover {
+        color: $textHover;
+      }
+      }
+    
+    }
+  }
+
+
+
+
+
+
+
+
+  
+/**
+ * /* 
+ *   ##Device = Most of the Smartphones Mobiles (Portrait)
+ *   ##Screen = 320px to 479px
+ *
+ * @format
+ */
+
+ @media (min-width: 240px) and (max-width: 480px) {
+   // Footer style
+footer{
+  height: 15vh;
+  flex-direction: column;
+  text-align: center;
+  padding: 0rem .5rem;
+}
+}
+
+/* 
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = 481px to 767px
+*/
+
+@media (min-width: 565px) and (max-width: 960px) and (orientation: landscape) {
+  footer{
+    height: 20vh;
+  }
+}
+
+/* 
+##Device = Tablets, Ipads (portrait)
+##Screen =  768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  footer{
+    height: 10vh;
+  }
+}
+
+/* 
+##Device = Tablets, Ipads (landscape)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 960px) and (max-width: 1300px) and (orientation: landscape) {
+}
+
+/* 
+##Device = Laptop(portrait)
+##Screen = B/w 1200px to 1450px
+*/
+@media (min-width: 1200px) and (max-width: 1450px) {
+}

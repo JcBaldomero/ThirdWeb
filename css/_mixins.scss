@@ -1,0 +1,46 @@
+// font links
+// Headers/Titles Etc..
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+// Agent Names
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+// Paragraphs/Small texts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+// Mixins
+@mixin flexBox($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+// Variables
+$fontFam1: 'Raleway', sans-serif;
+$fontFam2:'Open Sans', sans-serif;;
+$agentName: 'Anton', sans-serif;
+$whiteHeaders: white;
+$GreyBg:rgb(13, 13, 28);
+$linktext: rgb(51, 51, 51);
+$ptext: rgb(140, 151, 158);
+$textHover: rgb(216, 45, 45);
+$buttonHover: rgb(236, 45, 45);
+$shadowBox:5px 5px 8px  rgba(0,0,0,0.15);
+
+
+
+// Extends
+%button {
+  border: 1px solid $textHover;
+  border-radius: 0.2rem;
+  padding: 1rem 2.5rem;
+  font: 600 1rem $fontFam1;
+  color: $whiteHeaders;
+  background-color: $textHover;
+  transition: 0.3s ease-out;
+  &:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.253);
+    background-color: $buttonHover;
+  }
+}

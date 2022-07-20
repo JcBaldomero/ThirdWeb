@@ -1,0 +1,1702 @@
+/** @format */
+
+// imports
+@import './mixins';
+@import './nav';
+@import './footer';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: $fontFam1;
+  scroll-behavior: smooth;
+}
+//recording-header
+.recording-header{
+    width: 100%; 
+    height: 100vh;
+    position: relative;
+
+    img{
+        width: 100%; height: 100%;
+        object-fit: cover;
+    }
+
+    &::after{
+        content: '';
+        width: 100%; height: 100%;
+        background-color: rgba(0, 0, 0, 0.295);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 4;
+    }
+
+    .header-text{
+        width: fit-content; height: auto;
+        @include flexBox(center,flex-start,column);
+        padding: 2rem 2rem;
+        border: 5px solid $whiteHeaders;
+        color: $whiteHeaders;
+        position: absolute;
+        bottom: 15%;
+        left: 10%;
+        z-index:5;
+    h1{
+        font-size: clamp(2rem, 5rem, 7vw);
+        margin-bottom: 1rem;
+        letter-spacing: .2rem;
+    } 
+    p{
+        font-family: $fontFam2;
+    }
+    a{
+        color: $whiteHeaders;
+        font-size: clamp(1.5rem, 3rem, 5vw);
+        transition: .3s ease;
+        &:hover{
+            color: $textHover;
+        }
+    }
+    }
+}
+
+
+
+// ScreenShot Style
+.screenshot-container{
+    width: 100%; 
+    height: 80vh;
+    @include flexBox(center,center,column);
+    background-color: rgb(231, 230, 228);
+    
+    .screenshot-title{
+        width: 100%; height: 20%;
+        @include flexBox(center,center,column);
+    h1{
+        font-size: clamp(1.5rem, 3.5rem, 5vw);
+        text-transform: uppercase;
+        letter-spacing: 1.4;
+    }
+    }
+
+
+    .screenshot-content{
+        width: 100%; height: 65%;
+        @include flexBox(center,center,row);
+
+    
+    .ss-content{
+        width: 20%; height: 75%;
+        background-color: $whiteHeaders;
+        @include flexBox(center,center,column);
+        box-shadow:$shadowBox;
+        margin: 0rem 1rem;
+        transition: all .7s ease;
+        position: relative;
+
+    img{
+        width: 90%;
+        height: 60%;
+       object-fit: cover;
+       transition: .7s ease;
+    }
+
+
+    .content-text{
+        width: 100%;
+        height: 25%;
+        font-family: $fontFam2;
+        text-align: center;
+        transition: .7s ease;
+
+
+    p{
+        margin: 1rem 0rem;
+        color: $ptext;
+    }   
+    
+    }
+
+    }
+    
+
+    }
+    
+    .ss-content1, .ss-content2, .ss-content3{
+        &:hover{
+            box-shadow: unset;  
+            background-color: transparent;
+
+        }
+        &:hover img{
+            width: 100%;
+            height: 100%;
+        }
+        &:hover .content-text{
+            opacity: 0;
+        }
+    }
+
+    a{
+        @extend %button;
+    }
+    
+}
+
+
+// Ace Style
+.ace-container{
+    width: 100%;
+    height: 130vh;
+    background-color: $GreyBg;
+
+
+    .aceTop-container{
+        width: 100%;height: 50%;
+        @include flexBox(center,center,row);
+    .aceTop-img{
+        width: 55%; height: 100%;
+        @include flexBox(flex-end,flex-end,row);
+        img{
+            width: 40%;
+            height: 40%;
+            object-fit: cover;
+        }
+    }
+
+
+    .aceTop-text{
+        width: 45%; height: 100%;
+        color: $whiteHeaders;
+        @include flexBox(flex-start,center,row);
+        position: relative;
+        
+        
+    .aceTop-title{
+        @include flexBox(flex-end,flex-start,column);
+        margin: 5rem 0rem 0rem 2rem;
+        width: 50%;
+        height: auto;
+    h1{
+        font-size: clamp(1rem, 3.5rem, 8vw);
+        margin-bottom: 1rem;
+    }
+    p{
+        line-height: 1.5;
+        margin-bottom: 1rem;
+
+    }
+    a{
+        padding: .5rem 1.5rem;
+        letter-spacing: .1rem;
+        @extend %button;
+    }
+    }
+
+
+    .acetext-vid{
+        width: 65%;
+        height: 75%;
+        position: absolute;
+        left: -10%;
+        bottom: -45%;
+    video{
+        width: 100%; height: 100%;
+    }
+    }
+    }
+
+ 
+
+}
+
+
+
+    .aceBottom-container{
+        width: 100%;height: 50%;
+        @include flexBox(center,center,row);
+   
+    .aceBottom-content{
+        width: 50%; height: 100%;
+        @include flexBox(space-around,center,row);
+
+    .acebottom-img1{
+        width: 25%;
+        height: 50%;
+        align-self: flex-start;
+        margin-top: 4rem;
+        border: 10px solid $textHover;
+        transition: .3s ease;
+        &:hover{
+            border: 1px solid transparent;
+        }
+    }
+    .acebottom-vid{
+        width: 45%;
+        height: 45%;
+        align-self: flex-end;
+        justify-self: flex-end;
+        margin-bottom: 7rem;
+    }
+
+    .aceBottom-text{
+        width: 20%;
+        height: 50%;
+        @include flexBox(center,center,column);
+        align-self: flex-end;
+        color: $textHover;
+        margin-bottom: 6rem;
+        text-align: center;
+        h2{
+            font-size: clamp(2rem, 2.3rem, 3vw);
+        }
+        hr{
+            color: $textHover;
+            margin: 1rem 0rem;
+            width: 100%
+        }
+        .socials{
+            @include flexBox(center,center,row);
+        i{
+            margin: 0rem .5rem;
+            font-size: 1.5rem;
+            transition: .3s ease-in;
+            &:hover{
+                color: $whiteHeaders;
+            }
+        }
+        }
+
+        p{
+            line-height: 1.5;
+        }
+    }
+    }
+    
+}
+}
+
+
+
+
+
+
+
+// HighLights style
+.highlights-container{
+    width: 100%; height: 100vh;
+    position: relative;
+    @include flexBox(center,center,row);
+    &::before{
+        content: '';
+        width: 60%; height: 30%;
+        background-color: $GreyBg;
+        position: absolute;
+        top: 25%;
+        left: 20%;
+        z-index: -4;
+
+    }
+
+
+    .highlights-top{
+        width: 50%; height: 100%;
+        @include flexBox(flex-start,flex-end,column);
+        margin-right: 1.5rem;
+    
+
+    .highTop-content{
+        width: 45%; height: 100%;
+        @include flexBox(flex-start,flex-start,column);
+        padding: 4rem 0rem 0rem 0rem;
+        text-align: start;
+        transition: .3s ease;
+
+        &:hover{
+            width: 75%;
+            img{
+                height: 50%;
+            }
+        }
+
+        img{
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+            margin-bottom: 2.5rem;
+            transition: .3s ease;
+
+        }
+        p{
+            font-family:$fontFam2;
+            line-height: 1.5rem;
+            margin-bottom: 3rem
+        }
+        a{@extend %button;}
+    }
+}
+
+
+        .highlights-bottom{
+         width: 50%; height: 100%;
+         margin-left: 1.5rem;
+        
+
+        .highBot-content{
+            width: 45%; height: 100%;
+            @include flexBox(flex-start,flex-start,column);
+            padding: 5rem 0rem 0rem 0rem;
+            text-align: start;    
+            transition: .3s ease;
+
+            &:hover{
+                width: 65%;
+            img{
+                height: 45%;
+            }
+            }
+
+        
+         h2{
+             color: $textHover;
+             font-size: clamp(1.5rem, 2.5rem, 5vw);
+             margin-bottom: 2rem;
+         }
+         img{
+             width: 100%; height: 75%;
+             object-fit: cover;
+             transition: .3s ease;
+
+
+         }
+        }
+ }
+}
+
+
+
+//Random Skits style
+.randomSkits-container{
+    width: 100%;height: 100vh;
+    position: relative;
+    @include flexBox(center,center, row);
+    &::before{
+        content: '';
+        width: 30%; height: 90%;
+        background-color: $GreyBg;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &::after{
+        content: '';
+        width: 40%; height: 38%;
+        background-color: $textHover;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .randomSkits-content{
+        width: 35%; height: 100%;
+        z-index: 69;
+        text-align: center;
+    img{
+        width: 100%;
+        height: 40%;
+        margin-top: 7rem;
+    }
+    .randomSkits-text{
+        width: 100%;
+        height: auto;
+        margin-top: 5rem;
+    h2{
+        color: $textHover;
+        font-size: clamp(1.5rem, 3.5rem, 4vw);
+    }
+    p{
+        color: $whiteHeaders;
+        line-height:1.6;
+        font-size: clamp(1rem, 1.3rem, 4vw);
+        padding: 2rem 3.5rem 3rem 3.5rem;
+    }
+    a{
+      @extend %button;
+    }
+    }
+    }
+} 
+
+
+
+
+
+// Funny/Epic Moments style
+
+.funEpic-container{
+    width: 100%; height: 100vh;
+    @include flexBox(center,center,row);
+    
+
+
+    .funnyMoments-container{
+        width: 50%; height: 100%;
+        @include flexBox(flex-start, flex-end,column);
+        padding: 5rem 1.5rem 0rem 0rem;
+
+    
+    
+    .funnyMoments-img{
+        width: 50%;
+        height: 65%;
+        position: relative;
+        transition: .6s ease;
+
+    img{
+        width: 100%; height: 100%;
+        object-fit: cover;
+    }
+    .funny-card{
+        width: 80%;
+        height:auto;
+        bottom: -30%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: .6s ease;
+
+
+    }
+    &:hover {
+        width: 65%;
+        height: 90%;
+    .funny-card{
+        width: 50%;
+        left: -15%;
+        bottom: 30%;
+    }
+    }
+    }
+
+ 
+   
+    }
+
+
+
+    .epicFails-container{
+        width: 50%; height: 100%;
+    
+    .epicFail-img{
+        width: 60%; height: 100%;
+        padding: 5rem 0rem 0rem 1.5rem;
+        position: relative;
+        transition: .6s ease;
+
+
+    img{
+        width: 100%; height: 90%;
+        object-fit: cover;
+    }
+    .epic-card{
+        width: 40%; height: 30%;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -20%;
+        transition: .6s ease;
+
+        
+    
+    }
+
+    &:hover{
+        width: 90%;
+        height: 75%;
+    .epic-card{
+      top: 90%;
+      right: 30%
+      
+
+    }
+    }
+
+    }
+    }
+
+
+    .card{
+
+        @include flexBox(center,center,column);
+        text-align: center;
+        padding: 2rem 1rem;
+        box-shadow: $shadowBox;
+        background-color: white;
+        position: absolute;
+        h2{
+            font-size: 2rem;
+            margin-bottom: 1rem;        
+
+        }
+        p{
+            line-height: 1.5;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-family: $fontFam2;
+        }
+        a{
+            text-decoration: underline;
+            color: $textHover;
+       
+        }
+    }
+
+}
+
+
+// Updated section
+.updated-container{
+    width: 100%; height: 50vh;
+    margin-top: 10rem;
+    display: flex;
+    .updated-img1, .updated-content, .updated-img2{
+        width: 33.333%; height: 100%;
+    }
+
+    .updated-img1, .updated-img2{
+        z-index: -2;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .updated-content{
+        background-color: $GreyBg;
+        position: relative;
+        color: $whiteHeaders;
+        @include flexBox(center,center,column);
+        text-align: center;
+        padding: 0rem 1rem;
+
+    h2{
+        margin: 2rem 0rem;
+        font-size: clamp(1.5rem, 3rem, 5vw);
+    }
+    h4{
+        font-size: clamp(1rem, 1rem, 4vw);
+        color: $textHover;
+    }
+    p{
+        line-height: 1.5;
+        margin: 2rem 0rem;
+        font-family: $fontFam2;
+    }
+    
+    .socials{
+        i{
+            font-size: clamp(1rem, 1.5rem, 3vw);
+            margin: 0rem 1rem;
+            transition: .3s ease;
+            &:hover{
+                color: $textHover;
+            }
+        }
+    }
+
+
+    &::before{
+        content: '';
+        width: 135%;
+        height: 25%;
+        background-color: $textHover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    }
+
+}
+
+
+
+
+
+
+// 
+// 
+// Media Queries sections Below
+// 
+// 
+
+
+
+
+
+
+
+
+
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = 320px to 479px
+*/
+
+@media (min-width: 240px) and (max-width: 480px) {
+    .recording-header{
+        height:100vh;
+     
+        .header-text{
+            padding: 1rem 3rem 1rem 1rem;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            h1{
+                margin-bottom: 0rem;
+            } 
+        }
+        
+    
+    }
+
+
+
+    .screenshot-container{
+        height: 180vh;
+        .screenshot-title{
+            height: 10%;
+        }
+        .screenshot-content{
+            width: 100%; height: 90%;
+            @include flexBox(center,center,column);
+         
+            .ss-content{
+                width: 85%; height: 100%;
+                margin:1rem 0rem ;
+
+        
+            img{
+                width: 90%;
+                height: 60%;
+               object-fit: cover;
+               transition: .3s ease-in;
+            }
+            }
+            
+        
+            }
+            a{
+                margin: 1rem;
+            }
+        }
+    
+
+
+        .ace-container{
+        height: 250vh;
+        .aceTop-container{
+            @include flexBox(center,center,column);
+            height: 50%;
+
+        .aceTop-img{
+            width: 100%;
+            @include flexBox(center,center,row);
+        img{
+            width: 90%;
+            height: 70%;
+        }
+        }
+
+        .aceTop-text{
+            width: 100%; height: 50%;
+            @include flexBox(center,center,column);
+        .aceTop-title{
+            width: 100%; height: 100%; 
+            @include flexBox(center,center,column);
+            text-align: center;
+            margin: 0rem;
+            h1{
+                margin-top: 2rem;
+            }
+        }
+        .acetext-vid{
+            position: unset;
+            width: 90%;
+            margin: 2rem 0rem;
+        }
+
+        }
+
+        }
+
+
+        .aceBottom-container{
+            height: 50%;
+
+        .aceBottom-content{
+            flex-direction: column;
+            width: 100%;
+        
+        .acebottom-img1{
+            align-self: unset;
+            justify-self: unset;
+            width: 65%;
+            height: 60%;
+        }
+        .acebottom-vid{
+            width: 90%;
+            height: 55%;
+            margin: 2rem 0rem;
+            align-self: unset;
+            justify-self: unset;
+        }
+
+        .aceBottom-text{
+            width: 100%;
+        hr{
+            width: 90%;
+        }
+        p{
+            padding: 0rem 2rem;
+        }
+        }
+
+        }
+            
+        }
+        }
+
+
+.highlights-container{
+    flex-direction: column;
+    height: 150vh;
+
+    &::before{
+        width: 100%;
+        height: 10%;
+        top: 15%;
+        left: 0%;
+    }
+
+    .highlights-top{
+        width: 100%;
+        height: 50%;
+        margin-right:0rem;
+
+    .highTop-content{
+        width: 100%;
+        height: 100%;
+        @include flexBox(center,center,column);
+        text-align: center;
+        img{
+            width: 90%;
+            height: 100%;
+            margin: 0rem 0rem 1rem 0rem;
+        }
+      
+    }
+    }
+
+
+    .highlights-bottom{
+        width: 100%;
+        height: 50%;
+        margin-left: 0rem;
+
+    .highBot-content{
+        width: 100%;
+        @include flexBox(flex-start,center,column);
+        padding: 2rem 0rem;
+     img{
+         width: 90%;
+     }   
+    }
+
+    }
+}
+
+
+//Random Skits style
+.randomSkits-container{
+    height: 120vh;
+    &::before{
+        content: '';
+        width: 65%; height: 90%;
+        background-color: $GreyBg;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &::after{
+        content: '';
+        width: 90%; height: 25%;
+        top: 15%;
+
+    }
+
+    .randomSkits-content{
+        width: 100%; height: 100%;
+ 
+    img{
+        width: 80%;
+        height: 25%;
+        margin-top: 5rem;
+    }
+    .randomSkits-text{
+        width: 100%;
+        margin-top: 5rem;
+    h2{
+        color: $textHover;
+        font-size: clamp(1.5rem, 3.5rem, 4vw);
+    }
+    p{
+        color: $whiteHeaders;
+        line-height:1.6;
+        font-size: clamp(1rem, 1.3rem, 4vw);
+        padding: 2rem 3.5rem 3rem 3.5rem;
+    }
+ 
+    }
+    }
+} 
+
+
+// Funny/Epic Moments style
+
+.funEpic-container{
+    height: 150vh;
+    @include flexBox(space-around,center,column);
+
+
+    .funnyMoments-container{
+        width: 100%; height: 50%;
+        @include flexBox(center, center,column);
+        padding: 0rem;
+    
+    
+    .funnyMoments-img{
+        width: 100%;
+        height: 100%;
+        @include flexBox(space-between,center,column);
+
+
+
+    img{
+        width: 90%; height: 50%;
+    }
+    .funny-card{
+        height:50%;
+        bottom: 0%;
+        left: 0%;
+        transform: translateX(-0%);
+        padding: 0rem;
+    }
+
+    }
+
+ 
+   
+    }
+
+
+
+    .epicFails-container{
+        width: 100%; height: 50%;
+
+
+    
+    .epicFail-img{
+        width: 100%; height: 100%;
+        @include flexBox(center, center,column);
+        padding:0rem;
+
+
+    img{
+        width: 90%; height: 50%;
+    }
+    .epic-card{
+        width: 90%; height: 50%;
+        top: unset;
+        transform: translateY(-0%);
+        right: unset;    
+        padding: 0rem;
+
+    }
+
+
+    }
+    }
+
+
+    .card{
+        position: unset;
+        box-shadow: unset;
+    }
+
+}
+   
+
+
+// Updated section
+.updated-container{
+    height: 120vh;
+    margin-top: 0rem;
+    @include flexBox(center,center,column);
+    .updated-img1, .updated-content, .updated-img2{
+        height: 33.333%; width: 100%;
+    }
+    .updated-content{
+    h2{
+        margin: 1rem 0rem;
+    }
+    p{
+        margin: 1rem 0rem;
+        line-height: unset;
+    }
+    &::before{
+        width: 35%;
+        height: 125%;
+    }
+    }
+
+}
+
+
+
+// 
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = 481px to 767px
+*/
+
+@media (min-width: 565px) and (max-width: 960px) and (orientation: landscape){
+    .recording-header{
+        .header-text{
+            width: 35%; height:auto;
+            padding: .5rem 1rem;
+            border: 3px solid $whiteHeaders;
+            bottom: 15%;
+            left: 5%;
+        h1{
+            font-size: 2rem;
+            margin-bottom: .5rem;
+        } 
+      
+        }
+    }
+
+
+    .screenshot-container{
+        height: 250vh;
+        padding-bottom: 1rem;
+
+
+        .screenshot-title{
+            height: 10%;
+        }
+
+        .screenshot-content{
+            height: 90%;
+            flex-wrap: wrap;        
+
+
+
+        .ss-content{
+            width:40%; 
+            height: 45%;
+        }
+        }
+
+        
+    }
+    
+    
+
+
+
+    .ace-container{
+        height: 450vh;  
+    
+    .aceTop-container{
+        width: 100%; height: 50%;
+        @include flexBox(center,center,column);
+
+
+
+    .aceTop-img{
+        @include flexBox(center,center,row);
+        width: 100%;
+        height: 45%;
+        padding: 0rem;
+        img{
+            width: 80%;
+            height: 60%;
+            
+        }
+    }
+    .aceTop-text{
+        width: 100%; height: 55%;
+        @include flexBox(center,center,column);
+
+
+    .aceTop-title{
+        padding: 0rem 5rem 0rem 5rem;
+        margin: 0rem;
+        @include flexBox(center,center,column);
+        width: 100%;
+        text-align: center;
+
+    }
+    .acetext-vid{
+        width: 45%;
+        position: unset;
+    }
+    }
+    }
+
+
+
+    .aceBottom-container{
+        height: 50%;
+
+   
+        .aceBottom-content{
+            width: 100%; 
+            @include flexBox(center,space-around,column);
+    
+        .acebottom-img1{
+            width: 30%;
+            height: 33%;
+            align-self: center;
+            margin-top: 0rem;      
+        }
+        .acebottom-vid{
+            width: 50%;
+            height: 33%;
+            align-self: center;
+            justify-self: center;
+            margin:2rem 0rem  0rem 0rem ;
+        }
+    
+        .aceBottom-text{
+            width: 40%;
+            height: 33%;
+            align-self: center;
+            margin-bottom: 0rem;
+        }
+        }
+    
+}
+
+
+    }
+
+
+
+      // HighLights style
+  .highlights-container{
+    height: 200vh;
+    &::before{
+        width: 90%; height: 35%;
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+    .highlights-top{
+        width: 50%; height: 100%;
+        margin-right: 1rem;
+    
+
+    .highTop-content{
+        width: 75%; 
+        padding: 5rem 0rem 0rem 0rem;
+        img{
+            width: 100%;
+            height: 90%;
+            margin-bottom: 2rem;
+        }
+        p{
+            line-height: unset;
+        }
+    }
+
+
+}
+
+
+        .highlights-bottom{
+         width: 50%; 
+         margin-left: 1rem;
+
+        .highBot-content{
+            width: 70%; 
+            padding: 5rem 0rem 0rem 0rem;
+         h2{
+             margin-bottom: 1rem;
+         }
+         img{
+             width: 100%; height: 75%;
+         }
+        }
+ }
+}
+
+
+//Random Skits style
+.randomSkits-container{
+    height: 250vh;
+    &::before{
+        width: 40%;
+    }
+    &::after{
+        width: 60%;
+        height: 25%;
+    }
+
+    .randomSkits-content{
+        width: 50%; 
+        margin-top: 7rem;
+    img{
+        height: 30%;
+        margin-top: 3rem;
+    }
+    .randomSkits-text{
+        width: 100%;
+    p{
+        line-height: unset;
+        padding: 1rem 2rem 2rem 2rem;
+    }    
+    }
+    }
+} 
+
+
+// Funny/Epic Moments style
+
+.funEpic-container{
+    height: 250vh;
+
+
+    .funnyMoments-container{
+        width: 50%; height: 100%;
+        @include flexBox(flex-start, flex-end,column);
+        padding: 5rem 1rem 0rem 0rem;
+    .funnyMoments-img{
+        width: 85%;
+    }
+    }
+
+
+
+    .epicFails-container{
+        width: 50%; height: 100%;
+    
+    .epicFail-img{
+        width: 85%; height: 75%;
+        padding: 5rem 0rem 0rem 1rem;
+
+ 
+    .epic-card{
+        width: 80%;
+        height:35%;
+        bottom: -12%;
+        top: unset;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: .6s ease;
+
+        
+    
+    }
+
+    }
+    }
+
+
+    .card{
+
+        @include flexBox(center,center,column);
+        text-align: center;
+        padding: 2rem 1rem;
+        box-shadow: $shadowBox;
+        background-color: white;
+        position: absolute;
+        h2{
+            font-size: 2rem;
+            margin-bottom: 1rem;        
+
+        }
+        p{
+            line-height: 1.5;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-family: $fontFam2;
+        }
+        a{
+            text-decoration: underline;
+            color: $textHover;
+       
+        }
+    }
+
+}
+
+
+
+// Updated section
+.updated-container{
+    height: 100vh;
+    margin-top: 5rem;
+ 
+
+  
+    .updated-content{
+       
+    h2{
+        margin: 1rem 0rem;
+    }
+
+    p{
+        line-height: unset;
+        margin: 1rem 0rem;
+    }
+    }
+
+}
+
+
+
+// 
+  }
+
+
+
+
+
+
+
+
+
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen =  768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
+    .recording-header{
+        height: 90vh;
+    .header-text{
+        padding: 1rem;
+        bottom: 5%;
+        left: 5%;
+
+    }
+    }
+
+
+    // ScreenShot Style
+.screenshot-container{
+     height: 100vh;
+
+    
+    .screenshot-title{
+        height: 20%;
+    }
+    .screenshot-content{
+        height: 65%;     
+        flex-wrap: wrap;
+
+
+    
+    .ss-content{
+        width: 40%; height: 45%;
+    }
+    
+
+    }
+    a{
+        margin: 1rem;
+    }
+   
+
+    
+}
+
+
+// Ace Style
+.ace-container{
+height: 100vh;
+
+
+    .aceTop-container{
+    .aceTop-img{
+        width: 45%; 
+        img{
+            width: 80%;
+            height: 30%;
+        }
+    }
+
+
+    .aceTop-text{
+        width: 55%;
+        align-items: flex-end;
+        padding-bottom: 5rem;
+        
+        
+    .aceTop-title{
+        width: 100%;
+    }
+
+
+    .acetext-vid{
+        width: 85%;
+        left: -15%;
+        bottom: -50%;
+
+    }
+    }
+
+ 
+
+}
+
+
+
+    .aceBottom-container{
+   
+    .aceBottom-content{
+        width: 100%; 
+
+    .acebottom-vid{
+        width: 35%;
+      
+    }
+
+ 
+    }
+    
+}
+}
+
+
+
+.highlights-container{
+    flex-direction: column;
+
+    &::before{
+        width: 100%;
+        height: 10%;
+        top: 15%;
+        left: 0%;
+    }
+
+    .highlights-top{
+        width: 100%;
+        height: 50%;
+        margin-right:0rem;
+
+    .highTop-content{
+        width: 100%;
+        height: 100%;
+        @include flexBox(center,center,column);
+        text-align: center;
+        img{
+            width: 90%;
+            height: 100%;
+            margin: 0rem 0rem 1rem 0rem;
+        }
+        p{
+            padding: 0rem 2rem;
+        }
+      
+    }
+    }
+
+
+    .highlights-bottom{
+        width: 100%;
+        height: 50%;
+        margin-left: 0rem;
+
+    .highBot-content{
+        width: 100%;
+        @include flexBox(flex-start,center,column);
+        padding: 2rem 0rem;
+     
+        img{
+            width: 95%;
+        }   
+    }
+
+    }
+}
+
+
+
+//Random Skits style
+.randomSkits-container{
+    height: 100vh;
+    &::before{
+        width: 45%;
+    }
+    &::after{
+        width: 65%; height: 30%;
+        top: 25%;
+    }
+
+    .randomSkits-content{        
+        width: 55%; 
+    img{
+        height: 35%;
+        margin-top: 10rem;
+    }
+    .randomSkits-text{
+        margin-top: 7rem;
+    p{
+        padding: 1rem 3.5rem 1.5rem 3.5rem;
+
+    }
+    }
+
+} 
+}
+
+
+
+
+// Funny/Epic Moments style
+
+.funEpic-container{
+    .funnyMoments-container{
+        width: 50%; height: 100%;
+        @include flexBox(flex-start, flex-end,column);
+        padding: 5rem 1rem 0rem 0rem;
+    
+    
+    .funnyMoments-img{
+        width: 90%;
+        height: 65%;
+
+    .funny-card{
+        width: 85%;
+        bottom: -20%;
+
+    }
+    }
+
+ 
+   
+    }
+
+
+
+    .epicFails-container{
+        width: 50%; height: 100%;
+    
+    .epicFail-img{
+        width: 90%; height: 67.5%;
+        padding: 5rem 0rem 0rem 1rem;
+
+    img{
+        width: 100%; height: 100%;
+    }
+    .epic-card{
+        width: 80%; height: auto;
+        top: 92%;
+        left: 12%;
+        transform: unset;      
+    }
+    }
+    }
+
+
+
+
+}
+
+.updated-container{
+    height: 45vh;
+    margin-top: 0rem;
+    .updated-content{
+        .socials{
+            i{
+                margin: 0rem .2rem;
+            }
+        }
+    }
+}
+
+
+// 
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 960px) and (max-width: 1366px) and (orientation: landscape) {
+
+    .randomSkits-container{
+        height: 150vh;
+    &::after{
+        height: 25%;
+    }
+    .randomSkits-content{
+        img{
+            height: 25%;
+        }
+    .randomSkits-text{
+        margin-top: 10rem;
+    }
+    }
+    }
+
+
+
+    .funEpic-container{
+
+    .funnyMoments-container{
+
+        .funnyMoments-img{
+        width: 80%;
+        height: 55%;
+    }
+    }
+
+    .epicFails-container{
+    
+    .epicFail-img{
+        width: 75%;
+     .epic-card{
+        width: 45%; height: 50%;
+        right: -30%;
+    }
+     }
+  
+    }
+  
+    }
+
+}
+
+
+
+
+
+
+
+/* 
+  ##Device = Laptop(portrait)
+  ##Screen = B/w 1200px to 1450px
+*/
+@media (min-width: 1200px) and (max-width: 1450px){
+.recording-header{
+    .header-text{
+        left: 5%;
+    }
+}    
+
+
+
+.screenshot-container{
+    .screenshot-content{
+        width: 100%;
+    .ss-content{
+        width: 25%;
+    }
+    }
+}
+
+
+// ace style
+.ace-container{
+    height: 150vh;
+    .aceTop-container{
+      
+    .aceTop-img{
+        img{
+            width: 55%;
+            height: 45%;
+        }
+    }
+
+    .aceTop-text{
+    .aceTop-title{
+        width: 75%;
+        margin: 5rem 0rem 0rem 2rem;
+    }
+    .acetext-vid{
+        width: 85%;
+        left: -20%;
+        bottom: -40%;
+    }
+    }
+    }
+
+
+    .aceBottom-container{
+        .aceBottom-content{
+            width: 70%;
+            
+        .acebottom-vid{
+            margin-bottom: 7rem;
+        }
+
+        .aceBottom-text{
+            margin-bottom: 7rem;
+        }
+        }
+    }
+
+
+}
+
+
+// Highlights styles
+.highlights-container{
+    height: 120vh;
+    &::before{
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+.highlights-top{
+.highTop-content{
+    width: 70%;
+}
+}
+
+.highlights-bottom{
+    .highBot-content{
+        width: 70%;
+        &:hover{
+            width: 80%;
+
+        }
+    }
+}
+
+}
+
+
+
+
+
+// 
+}

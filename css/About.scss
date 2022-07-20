@@ -1,0 +1,1642 @@
+/** @format */
+
+// imports
+@import './mixins';
+@import './nav';
+@import './footer';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: $fontFam1;
+}
+nav {
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.075);
+}
+
+.about-intro {
+  width: 100%;
+  height: 100vh;
+  @include flexBox(center, center, row);
+  margin-bottom: 5rem;
+  overflow: hidden;
+
+  .intro-text {
+    width: 30%;
+    height: 80%;
+    h3 {
+      padding-bottom: 1.5rem;
+      font-size: clamp(1rem, 1.5rem, 3vw);
+      line-height: 1.5;
+      padding-right: 4rem;
+    }
+    p {
+      padding-right: 4rem;
+      line-height: 1.5rem;
+      font-family: $fontFam2;
+    }
+
+    .detail-container {
+      width: 100%;
+      height: 50%;
+      margin-top: 2rem;
+      @include flexBox(center, center, row);
+      flex-wrap: wrap;
+      .details {
+        width: 50%;
+        height: 60%;
+        @include flexBox(center, flex-start, column);
+        h4 {
+          font-size: clamp(1.5rem, 1.5rem, 3vw);
+          color: $ptext;
+        }
+        h3 {
+          font-size: clamp(3rem, 6rem, 3vw);
+          color: $textHover;
+          font-family: $fontFam2;
+        }
+        img {
+          width: 5.5rem;
+          height: 5.5rem;
+          margin-top: 1rem;
+          transition: 0.5s all ease-out;
+          &:hover {
+            width: 9.5rem;
+            height: 9.5rem;
+          }
+        }
+        #Phantom {
+          width: 12rem;
+          height: 7rem;
+          margin-top: 1rem;
+          transition: 0.5s all ease-out;
+          &:hover {
+            width: 17rem;
+            height: 10rem;
+          }
+        }
+      }
+    }
+  }
+
+  .intro-img {
+    width: 30%;
+    height: 80%;
+    padding-left: 5rem;
+
+    h1 {
+      font-family: $fontFam2;
+      font-size: clamp(1.3rem, 2.5rem, 4vw);
+      color: $textHover;
+      margin-bottom: 2rem;
+      width: 150%;
+    }
+
+    .xcali-img-container {
+      width: fit-content;
+      height: 80%;
+      position: relative;
+
+
+      img {
+        width: 503px;
+        height: 670px;
+        z-index: 3;
+        transition: all 0.5s ease-out;
+        filter: brightness(110%);
+      }
+      &::after {
+        content: '';
+        background-color: $textHover;
+        
+        width: 503px;
+        height:670px;
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        z-index: -99;
+        transition: 0.6s ease;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// Playing Valorant Styles
+.playing-container {
+  width: 100%;
+  height: auto;
+  @include flexBox(center, center, row);
+  padding: 5rem 0rem;
+
+  .playing-grid {
+    width: 55%;
+    height: 80%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(3, 250px);
+
+    .div {
+      color: white;
+    }
+    .div1 {
+      grid-row: span 2;
+      background-color: $textHover;
+      @include flexBox(center, flex-start, column);
+      padding: 0rem 2rem;
+      transition: 0.5s ease-in;
+      border: 1px solid $textHover;
+      h2 {
+        margin-bottom: 0.5rem;
+        font-size: clamp(1.4rem, 1.9rem, 3vw);
+        
+      }
+      p {
+        line-height: 1.5;
+        font-size: clamp(0.9rem, 1rem, 2vw);        font-family: $fontFam2;
+
+      }
+      &:hover {
+        background-color: transparent;
+        color: $textHover;
+      }
+    }
+
+    .div2 {
+      perspective: 800px;
+      grid-column: 2/3;
+
+      .card-flip {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: all 0.6s;
+        transform-style: preserve-3d;
+
+        .front-card,
+        .back-card {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          // hides the backCard class away
+        }
+        .front-card {
+          background: $textHover url(../Images/Background/cliente-valorant.jpg)
+            no-repeat center;
+          background-size: cover;
+        }
+        .back-card {
+          background-color: $textHover;
+          transform: rotateX(180deg);
+          @include flexBox(center, center, column);
+          padding: 0rem 1rem;
+          h2 {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+      &:hover .card-flip {
+        transform: rotateX(180deg);
+      }
+    }
+
+    .div3 {
+      background: $textHover url(../Images/Agents/SovaChibi.png) no-repeat
+        center;
+      background-size: contain;
+      grid-column: 3/4;
+      color: transparent;
+      transition: 0.3s ease-in;
+      @include flexBox(center, center, column);
+      h2 {
+        font-size: clamp(1.3rem, 2rem, 3vw);
+      }
+      a {
+        color: transparent;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      &:hover {
+        color: $textHover;
+        font-size: clamp(1rem, 1.9rem, 3vw);
+        background: $whiteHeaders;
+        border: 1px solid $textHover;
+        a {
+          color: $textHover;
+        }
+      }
+    }
+
+    .div4 {
+      @include flexBox(center, center, column);
+      border: 1px solid black;
+      color: black;
+      grid-row: 2/3;
+      grid-column: 2/3;
+      transition: 0.5s ease-in;
+      h2 {
+        font-size: clamp(2rem, 2.5rem, 3vw);
+      }
+      &:hover {
+        background-color: black;
+        color: $whiteHeaders;
+      }
+    }
+
+    .div5 {
+      perspective: 800px;
+      grid-row: 2/3;
+      grid-column: 3/4;
+
+      .card-flip {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: all 0.6s;
+        transform-style: preserve-3d;
+
+        .front-card,
+        .back-card {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          // hides the backCard class away
+        }
+        .front-card {
+          background: black url(../Images/Background/valoCover.jpg) no-repeat
+            center;
+          background-size: cover;
+        }
+        .back-card {
+          background-color: black;
+          transform: rotateY(180deg);
+          @include flexBox(center, center, column);
+          padding: 0rem 1rem;
+          h2 {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+      &:hover .card-flip {
+        transform: rotateY(180deg);
+      }
+    }
+
+    .div6 {
+      perspective: 800px;
+      grid-row: 3/4;
+      grid-column: 1/2;
+
+      .card-flip {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: all 0.6s;
+        transform-style: preserve-3d;
+
+        .front-card,
+        .back-card {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          // hides the backCard class away
+        }
+        .front-card {
+          background: $textHover
+            url(../Images/Background/valorant-jett-valorant-riot-games-hd-wallpaper-preview.jpg)
+            no-repeat center;
+          background-size: cover;
+        }
+        .back-card {
+          background-color: $textHover;
+          transform: rotateX(180deg);
+          @include flexBox(center, center, column);
+          padding: 0rem 1rem;
+          h2 {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+      &:hover .card-flip {
+        transform: rotateX(180deg);
+      }
+    }
+
+    .div7 {
+      grid-column: span 2;
+      background-color: $textHover;
+      @include flexBox(center, flex-start, column);
+      padding: 0rem 1.5rem;
+      transition: 0.5s ease-in;
+      border: 1px solid $textHover;
+      h2 {
+        margin-bottom: 1rem;
+      }
+      p{
+        font-family: $fontFam2;
+
+      }
+      a {
+        border: 1px solid $textHover;
+        border-radius: 0.2rem;
+        padding: 1rem 2rem;
+        margin-top: 1rem;
+        font: 600 1rem $fontFam1;
+        color: $whiteHeaders;
+        background-color: $textHover;
+        transition: 0.3s ease-out;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.253);
+        &:hover {
+          background-color: $whiteHeaders;
+          color: $textHover;
+        }
+      }
+      &:hover {
+        background-color: transparent;
+        color: $textHover;
+      }
+    }
+  }
+}
+
+// Fav Maps Style
+.maps-container {
+  width: 100%;
+  height: auto;
+  margin-top: 4rem;
+
+  .maps-intro {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    h1 {
+      font-size: clamp(2rem, 3.5rem, 3.5vw);
+      margin: 2rem 0rem;
+    }
+  }
+
+  // Icebox Map style
+  .icebox-container {
+    width: 100%;
+    height: fit-content;
+    @include flexBox(center, center, column);
+    margin: 10rem 0rem;
+    position: relative;
+
+    .icebox-grid {
+      width: 70%;
+      height: 70%;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 465px);
+      img {
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s ease-out;
+      }
+      .ice1,
+      .ice4 {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+
+          &:hover {
+            width: 80%;
+            height: 80%;
+          }
+        }
+      }
+      .ice1 {
+        @include flexBox(flex-end, flex-end, row);
+      }
+      .ice2 {
+        @include flexBox(flex-start, flex-end, row);
+        img {
+          width: 80%;
+          height: 80%;
+          object-fit: cover;
+
+          &:hover {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .ice3 {
+        @include flexBox(flex-end, flex-start, row);
+        img {
+          width: 80%;
+          height: 80%;
+          object-fit: cover;
+
+          &:hover {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  // Icebox title
+  .icebox-title-container {
+    width: 25rem;
+    height: 15rem;
+    color: $whiteHeaders;
+    @include flexBox(center, center, column);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    perspective: 800px;
+
+    .ice-flip {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      text-align: center;
+      transition: all 0.6s;
+      transform-style: preserve-3d;
+
+      .front-ice,
+      .back-ice {
+        @include flexBox(center, center, column);
+        width: 100%;
+        height: 100%;
+        background-color: $GreyBg;
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        // hides the backCard class away
+        h1 {
+          font-size: clamp(1.5rem, 4rem, 3.5vw);
+        }
+      }
+      .back-ice {
+        transform: rotateY(180deg);
+        padding: 3rem;
+        p {
+          line-height: 1.5;
+          font-family: $fontFam2;
+        }
+        span {
+          font-weight: bolder;
+          font-size: clamp(1.2rem, 1.5rem, 2vw);
+          color: $textHover;
+        }
+      }
+    }
+
+    &:hover .ice-flip {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+// Breeze Style
+.breeze-container {
+  width: 100%;
+  height: 105vh;
+  background-color: $GreyBg;
+  @include flexBox(center, center, row);
+
+  .breeze-grid {
+    width: 75%;
+    height: auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+
+    .breeze1 {
+      width: 100%;
+      height: 100%;
+      @include flexBox(flex-end, center, row);
+      img {
+        width: 85%;
+        height: 85%;
+        object-fit: cover;
+        transition: all 0.6s;
+
+        &:hover {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .breeze2 {
+      width: 100%;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 310px);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+      }
+      .breeze2-img1 {
+        display: flex;
+        justify-self: flex-end;
+        align-self: flex-end;
+        transition: all 0.6s;
+
+        &:hover {
+          width: 70%;
+          height: 75%;
+          display: flex;
+          justify-self: flex-end;
+          align-self: flex-end;
+        }
+      }
+      .breeze2-img2 {
+        width: 70%;
+        height: 75%;
+        display: flex;
+        align-self: flex-end;
+        transition: all 0.6s;
+        &:hover {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .breeze2-img3 {
+        grid-column: 1/3;
+        transition: all 0.6s;
+        &:hover {
+          width: 80%;
+          height: 80%;
+        }
+      }
+    }
+
+    // Breeze title
+    .breeze-title {
+      width: 30%;
+      height: 35%;
+      color: $whiteHeaders;
+      @include flexBox(center, center, column);
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 99;
+      perspective: 800px;
+
+      .breeze-card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        text-align: center;
+        transition: all 0.6s;
+        transform-style: preserve-3d;
+
+        .breeze-front,
+        .breeze-back {
+          @include flexBox(center, center, column);
+          width: 100%;
+          height: 100%;
+          background-color: $textHover;
+          position: absolute;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          // hides the backCard class away
+          h1 {
+            font-size: clamp(1.5rem, 4rem, 3.5vw);
+          }
+        }
+        .breeze-back {
+          transform: rotateX(180deg);
+          padding: 0rem 2rem;
+          p {
+            font-size: 1rem;
+            line-height: 1.5;
+                    font-family: $fontFam2;
+
+          }
+          span {
+            font-size: clamp(1.2rem, 1.5rem, 2vw);
+            font-weight: bolder;
+            color: #0d0d1d;
+          }
+        }
+      }
+
+      &:hover .breeze-card {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}
+
+
+// Haven style
+.haven-container{
+  width: 100%; height: 100vh;
+  @include flexBox(center,center, row);
+  margin-bottom: 5rem;
+
+  .haven-flex{
+    width: 70%; height: 70%;
+    @include flexBox(center,center, row);
+    position: relative;
+
+    &::after{
+      content: "";
+      width: 60%; height: 150%;
+      background-color: $GreyBg;
+      opacity: .1;
+      position: absolute;
+      left: 35%;
+      z-index: -1;
+    }
+
+    .haven{
+      margin: 0rem 1rem
+    }
+    .haven-left{
+      @include flexBox(flex-end,center, row);
+      width: 50%;
+      height: 100%;
+
+      img{
+        width: 100%; height: 80%;
+        transition: .5s ease;
+        object-fit: cover;
+        &:hover{
+          width: 80%;
+          height: 50%;
+        }
+      }
+    }
+
+
+
+    .haven-right{
+      width: 50%; height: 100%;
+      @include flexBox(center,flex-start, column);
+      img{
+        width: 75%;
+        height: 40%;
+        transition: .5s ease;
+        &:hover{
+          width: 85%;
+          height: 50%;
+        }
+      }
+      .haven-right-text{
+        width: 75%;
+        height: 40%;
+        @include flexBox(flex-start,flex-start, column);
+        padding: 2rem 0rem 0rem 0rem;
+        p{
+          font-weight: lighter;
+          margin-bottom: 1rem;
+          padding-right: 5rem;
+          line-height: 1.5;
+        }
+        a{
+          @extend %button;
+        }
+      }
+
+    }
+  
+
+
+
+    .haven-title{
+      width: 30%; height: 30%;
+      @include flexBox(center, center, column);
+      position: absolute;
+      top: 80%;
+      left: -5%;
+      perspective: 800px;
+
+      .haven-card{
+        width: 100%; 
+        height: 100%;
+        position: relative;
+        text-align: center;
+        transition: all 0.6s;
+        transform-style: preserve-3d;
+      .haven-front, .haven-back{
+        @include flexBox(center,center, row);
+        width: 100%;
+        height: 100%;
+        background-color: $whiteHeaders;
+        box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.116);
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        // hides the backCard class away
+        
+        h1{
+          font-size:  clamp(1.3rem, 4rem, 4vw);
+          color: $textHover;
+        }
+      }
+      .haven-back{
+        transform: rotateY(180deg);
+        span{
+          color: $textHover;
+          font-size: 1.5rem;
+        }
+        p{
+          line-height: 1.5;
+                  font-family: $fontFam2;
+
+        }
+      }
+      
+      }
+       &:hover .haven-card{
+        transform: rotateY(180deg);
+      }
+    }
+     
+  }
+    
+
+}
+
+// Gamemode Style
+.gamemode-container{
+  width: 100%; height: 100vh; //change height to auto later
+  @include flexBox(center,center, row);
+
+  .game-content{
+    width: 65%; height: 80%;
+    @include flexBox(center,center, row);
+
+    .game-img{
+      width: 65%; height: 100%;
+      @include flexBox(center,center, row);
+      position: relative;
+      img{
+        width: 72%; height: 60%;
+        object-fit: cover;
+        z-index: 99;
+        transition: .5s ease;
+        &:hover{
+          width: 65%;
+          height: 40%;
+        }
+      }
+      .pattern1{
+        width: 96%; height: 40%;
+        background-color: $textHover;
+        position: absolute;
+        top: 5%;
+        left: -2%;
+        transition: .5s ease;
+        &:hover{
+          width: 80%;
+          height: 35%;
+        }
+        
+      }
+      .pattern2{
+        width: 50%;
+        height: 70%;
+        background-color:$GreyBg;
+        position: absolute;
+        left: 5%;
+        top: 30%;
+        transition: .5s ease;
+        &:hover{
+          width: 55%;
+          height: 50%;
+        }
+      }
+    .pattern3{
+      width: 75%;
+      height: 55%;
+      background: url(../Images/PNG/PatternLines.png) no-repeat center;
+      background-size: cover;
+      position: absolute;
+      bottom: 10%;
+      right:  6%;
+      transition: .5s ease;
+      &:hover{
+        width: 65%;
+        height: 40%;
+        bottom: 20%;
+      }
+    }
+
+    }
+
+
+
+
+
+
+    .game-text{
+      width: 45%; height: 100%;
+      @include flexBox(center,flex-start,column);
+      h2{
+        font-size: clamp(1.5rem, 4rem, 7vw);
+        color: $textHover;
+      }
+      h3{
+        font-size: clamp(1rem, 2.4rem, 5vw);
+        margin-bottom: 3rem;
+        font-family: $fontFam2;
+      }
+      p{
+        line-height: 1.5;
+        font-family: $fontFam2;
+        padding:0rem 3rem 0rem 0rem;
+      }
+      .gamep{
+        padding:1rem 0rem 3rem 0rem;
+        
+      }
+      a{
+        @extend %button;
+      }
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// MediaQueries
+// MediaQueries
+// MediaQueries
+// MediaQueries
+// MediaQueries
+// Mobile view
+@media (max-width: 650px) {
+  .about-intro {
+    @include flexBox(center, center, column-reverse);
+    height: fit-content;
+    margin-top: 2rem;
+
+    .intro-text {
+      width: 100%;
+      text-align: center;
+      padding: 0rem 1rem;
+      h3,
+      p {
+        padding-right: 0;
+      }
+
+      .detail-container {
+        @include flexBox(center, center, column);
+        .details {
+          @include flexBox(center, center, column);
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .intro-img {
+      width: 100%;
+      padding: 2rem 0rem 0rem 0rem;
+      @include flexBox(center, center, column);
+      text-align: center;
+
+      .xcali-img-container {
+        width: 100%;
+        img {
+          width: 85%;
+          height: 80%;
+        }
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // Playing grid
+  .playing-container {
+    padding: 0rem;
+    height: auto;
+    .playing-grid {
+      width: 100%;
+      height: 100%;
+      gap: 0rem;
+
+      .div {
+        text-align: center;
+        grid-column: unset;
+        grid-row: unset;
+      }
+      .div1 {
+        @include flexBox(center, center, column);
+      }
+      .div3 {
+        a {
+          color: white;
+        }
+      }
+      .div4 {
+        padding: 5rem 0rem;
+        line-height: 2;
+        border: none;
+      }
+      .div7 {
+        @include flexBox(center, center, column);
+        padding: 2rem 0.5rem;
+      }
+    }
+  }
+
+  // Fav Maps Style
+  .maps-container {
+    height: auto;
+    margin-top: 0rem;
+    .maps-intro{
+      margin-bottom: 2rem;
+      padding: 0rem 1rem;
+    }
+    // Icebox Map style
+    .icebox-container {
+      height: auto;
+      position: relative;
+      @include flexBox(center, center, column-reverse);
+      margin: 0rem 0rem;
+
+      .icebox-grid {
+        width: 100%;
+        gap: 0rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+
+        .ice2 {
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .ice3 {
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    // Icebox title
+    .icebox-title-container {
+      width: 100%;
+      top: 0%;
+      left: 0%;
+      position: relative;
+      transform: translate(0%, 0%);
+
+      .ice-flip {
+        .front-ice,
+        .back-ice {
+          @include flexBox(center, center, column);
+          width: 100%;
+          height: 100%;
+          background-color: #0d0d1d;
+          position: relative;
+          -webkit-backface-visibility: unset;
+          backface-visibility: unset;
+        }
+        .front-ice {
+          display: none;
+        }
+        .back-ice {
+          transform: rotateY(0deg);
+          padding: 3rem;
+          span {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  .breeze-container{
+    height: auto;
+    .breeze-grid{
+      width: 100%;
+      height: auto;
+      @include flexBox(center,center, column-reverse);
+      grid-gap: 0rem;
+      grid-template-columns: unset;
+
+    .breeze1{
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .breeze2 {
+      gap: 0rem;
+      grid-template-columns: unset;
+      grid-template-rows: unset;
+      .breeze2-img1 {
+        width: 100%;
+        height: 100%;
+
+      }
+      .breeze2-img2 {
+        width: 100%;
+        height: 100%;
+      }
+      .breeze2-img3 {
+        grid-column: unset;
+        transition: all 0.6s;
+
+      }
+    }
+
+    // Breeze title
+    .breeze-title{
+      width: 100%;
+      height: 15rem;
+      position: relative;
+      top: 0%;
+      left: 0%;
+      transform: translate(-0%, -0%);
+      .breeze-card{
+
+        .breeze-front{
+          display: none;
+        }
+        .breeze-back{
+          position: unset;
+          transform: unset;
+
+        }
+      }
+    }
+  }
+    
+  }
+
+
+
+  
+// Haven style
+.haven-container{
+  margin-top: 3rem;
+  height: fit-content;
+
+  .haven-flex{
+    width: 100%; height: 100%;
+    @include flexBox(center,center, column-reverse);
+    
+    &::after{
+      display: none;
+    }
+
+    .haven{
+      margin: 0rem;
+    }
+    .haven-left{
+      @include flexBox(flex-end,center, row);
+      width: 100%;
+    }
+
+
+
+    .haven-right{
+      width: 100%;
+      height: 100%;
+      @include flexBox(center,center, column);
+
+      img{
+        width: 100%;
+        height: 100%;
+      }
+      .haven-right-text{
+        width: 100%;
+        height: 100%;
+        @include flexBox(center,center, column);
+        padding: 1rem;
+        text-align: center;
+        p{
+          margin-bottom: 0rem;
+          padding-right: 0rem;
+        }
+        a{
+          margin: 1rem 0rem;
+        }
+   
+      }
+
+    }
+  
+
+
+
+    .haven-title{
+      width: 100%; height:30%;
+      @include flexBox(center, center, column);
+      padding-bottom: 1rem;
+      position: relative;
+      top: 0%;
+      left: 0%;
+      .haven-card{
+
+      .haven-front{
+        opacity: 0;
+      }
+      .haven-back{
+        transform: unset;
+        position: relative;
+        padding: 1rem;
+        box-shadow: unset;
+      }
+      
+      }
+   
+    }
+     
+  }
+    
+
+}
+
+// Gamemode Style
+.gamemode-container{
+
+  .game-content{
+    width: 100%; height: 100%;
+    @include flexBox(center,center,column);
+
+    .game-img{
+      width: 100%; height: 50%;
+      @include flexBox(center,center, row);
+      position: relative;
+      img{
+        width: 70%; height: 60%;
+        object-fit: cover;
+        z-index: 99;
+      }
+      .pattern1{
+        width: 90%; height: 60%;
+        top: 5%;
+        left: 0%;
+        
+      }
+    .pattern3{
+      right:  10%;
+    }
+
+    }
+
+
+
+
+
+
+    .game-text{
+      width: 100%; height: 50%;
+      @include flexBox(center,flex-start,column);
+      padding-left: 1rem;
+
+      h3{
+        margin-bottom: 1rem;
+      }
+      p{
+
+        padding:0rem ;
+      }
+      .gamep{
+        padding: 1rem 0rem 0rem 0rem ;
+      }
+      a{
+        margin: 1rem 0rem 0rem 0rem;
+      }
+ 
+    }
+  }
+
+
+}
+
+}
+
+
+
+// 
+// 
+// 
+// 
+// Tablet(Ipad-Ipad Pro)
+@media (max-width: 1024px) and (min-width: 651px) {
+  .about-intro {
+    @include flexBox(center, center, column-reverse);
+    height: fit-content;
+    margin-top: 2rem;
+
+    .intro-text {
+      width: 100%;
+      text-align: center;
+      padding: 0rem 1rem;
+      h3,
+      p {
+        padding-right: 0;
+      }
+
+      .detail-container {
+        @include flexBox(center, center, row);
+        .details {
+          @include flexBox(center, center, column);
+          width: 50%;
+          margin: 5rem 0rem 0rem 0rem;
+          img {
+            width: 8rem;
+            height: 8rem;
+            margin-top: 1rem;
+          }
+          #Phantom {
+            width: 15rem;
+            height: 10rem;
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+
+    .intro-img {
+      width: 100%;
+      padding: 2rem 0rem 0rem 0rem;
+      @include flexBox(center, center, column);
+      text-align: center;
+
+      .xcali-img-container {
+        width: 100%;
+        margin-top: 2rem;
+        img {
+          width: 50%;
+          height: 75%;
+        }
+        &::after {
+         display: none;
+        }
+      }
+    }
+  }
+
+  // Playing grid
+  .playing-container {
+    .playing-grid {
+      width: 95%;
+      height: 80%;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      .div1{
+        padding: .5rem;
+        p{
+          line-height: 1.3;
+        }
+      }
+      .div7{
+        padding: 1rem;
+      }
+    }
+  }
+
+ 
+
+  .maps-container {
+    
+    
+    // Icebox Map style
+    .icebox-container {
+      .icebox-grid {
+        width: 90%;
+        height: 60%;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 330px);
+      }
+    }
+
+    // Icebox title
+    .icebox-title-container {
+      width: 45%;
+      height: 30%;
+    .ice-flip{
+      .front-ice, .back-ice{
+        -webkit-backface-visibility: unset;
+        backface-visibility: unset;
+      }
+      .back-ice{
+        transform: unset;
+        padding: 0rem .5rem;
+      }
+    }
+    }
+  }
+
+
+
+// Breeze Style
+.breeze-container {
+  width: 100%;
+  height: 100vh;
+
+  .breeze-grid {
+    width: 90%;
+    height: auto;
+    gap: 1rem;
+
+
+    .breeze1 {
+      img {
+        width: 100%;
+        height: 55%;
+      }
+    }
+
+    .breeze2 {
+
+      .breeze2-img1 {
+        height: 80%;
+        justify-self: flex-end;
+        align-self: flex-end;
+      }
+      .breeze2-img2 {
+        width: 80%;
+        height: 70%;
+      }
+      .breeze2-img3 {
+        height: 85%;
+      }
+    }
+
+    // Breeze title
+    .breeze-title {
+      width: 50%;
+      height: 40%;
+      .breeze-card {
+        .breeze-front,
+        .breeze-back {
+          @include flexBox(center, center, column);
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: unset;
+          backface-visibility: unset;
+          
+        }
+        .breeze-front{
+          display: none;
+        }
+        .breeze-back {
+          transform: unset;
+          padding: 0rem 1rem;
+          p {
+            font-size: 1rem;
+            line-height: 1.6;
+          }
+          span {
+            font-size: clamp(1.2rem, 1.5rem, 2vw);
+            font-weight: bolder;
+            color: #0d0d1d;
+          }
+        }
+      }
+
+      &:hover .breeze-card {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}
+
+
+// Haven style
+.haven-container{
+
+  .haven-flex{
+    width: 100%; height: 50%;
+    .haven{
+      margin: 0.5rem;
+    }
+  
+
+    .haven-right{
+      width: 40%; height: 100%;
+      @include flexBox(center,flex-start, column);
+      img{
+        width: 90%;
+      }
+      
+      .haven-right-text{
+        p{
+          margin: unset;
+          line-height: unset;
+          padding: 0rem;
+        }
+        a{
+          margin-top: 1.5rem;
+        }
+      }
+    }
+    
+
+
+
+    .haven-title{
+      width: 45%;height: 40%;
+      left: 2%;
+
+      .haven-card{  
+        text-align: start;
+      .haven-front{
+        display: none;
+      
+      }
+      .haven-back{
+        transform: unset;
+        padding: 1rem;
+        span{
+          color: $textHover;
+          font-size: 1.5rem;
+        }
+        p{
+          line-height: 1.6;
+        }
+      }
+      
+      }
+    
+    }
+     
+  }
+}
+
+// Gamemode Style
+.gamemode-container{
+  .game-content{
+    width: 100%; height: 100%;
+
+    .game-img{
+      width: 60%; height: 50%;
+    }
+
+  }
+
+
+}
+
+
+
+}
+
+
+
+
+// 
+// 
+// 
+// 
+// Laptop
+@media (max-width: 1550px) and (min-width: 1200px) {
+
+  .about-intro {
+    .intro-text {
+      width: 40%;
+      height: 80%;
+     }
+    }
+  
+
+    .intro-img {
+      width: 50%;
+      padding-left: 0rem;
+
+      .xcali-img-container{
+      &::after {
+        display: none;
+      }
+      }
+
+      }
+    
+
+
+      // Playing Valorant Styles
+.playing-container {
+
+
+  .playing-grid {
+    width: 75%;
+
+
+  }
+}
+ 
+    .breeze-container{
+      height:120vh;
+    .breeze-grid{
+      width: 90%;
+    }
+ 
+  }
+
+
+
+// Haven style
+.haven-container{
+  .haven-flex{
+    width: 85%; height: 70%;
+    @include flexBox(center,center, row);
+    position: relative;
+    .haven-title{
+      height: 35%;
+
+      .haven-card{
+    
+      .haven-back{
+          padding: 0rem 1rem;
+        p{
+          line-height: 1.5;
+        
+        }
+      }
+      
+      }
+       &:hover .haven-card{
+        transform: rotateY(180deg);
+      }
+    }
+     
+  }
+    
+
+}
+
+.gamemode-container{
+  height: 80vh; 
+  margin: 5rem 0rem;
+  .game-content{
+    height: 80%;
+  }
+}
+
+}
+
+
+
+
+
