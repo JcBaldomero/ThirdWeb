@@ -25,26 +25,22 @@ nav {
   align-items: center;
   flex-direction: row;
 }
-
 .logo h1 {
   margin: 1.5rem 0rem;
-  color: #333333;
+  color: rgb(51, 51, 51);
   font-size: clamp(1.5rem, 1.3vw, 40rem);
   font-weight: 300;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
-
 .logo h1:hover {
-  color: #d82d2d;
+  color: rgb(216, 45, 45);
 }
-
 .logo i {
   display: none;
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
-
 .logo i:hover {
-  color: #d82d2d;
+  color: rgb(216, 45, 45);
 }
 
 .navlink-container {
@@ -54,7 +50,6 @@ nav {
   flex-direction: row;
   width: 60%;
 }
-
 .navlink-container ul {
   width: 100%;
   display: flex;
@@ -62,18 +57,16 @@ nav {
   align-items: center;
   flex-direction: row;
 }
-
 .navlink-container ul li, .navlink-container ul a {
   margin: 0rem 1rem;
   font-size: clamp(1rem, 1vw, 20rem);
-  color: #333333;
+  color: rgb(51, 51, 51);
   font-weight: 200;
   cursor: pointer;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
-
 .navlink-container ul li:hover, .navlink-container ul a:hover {
-  color: #d82d2d;
+  color: rgb(216, 45, 45);
 }
 
 .dropdown {
@@ -81,15 +74,12 @@ nav {
   position: relative;
   z-index: 99;
 }
-
 .dropdown i {
-  transition: .3s ease-out;
+  transition: 0.3s ease-out;
 }
-
 .dropdown:hover i {
   transform: rotate(180deg);
 }
-
 .dropdown .dropdwn-content {
   width: 100%;
   display: flex;
@@ -105,35 +95,29 @@ nav {
   position: absolute;
   transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
 .dropdown:hover .dropdwn-content {
   opacity: 1;
   visibility: visible;
 }
-
 .dropdown:hover .dropdwn-content a, .dropdown:hover .dropdwn-content i {
   font-size: clamp(1rem, 1vw, 10rem);
   padding: 1rem 0rem;
 }
-
 .dropdown:hover .dropdwn-content a:hover, .dropdown:hover .dropdwn-content i:hover {
-  color: #d82d2d;
+  color: rgb(216, 45, 45);
 }
 
 .dropdown2 {
   display: inline-block;
   position: relative;
 }
-
 .dropdown2 #drop-i {
   transform: rotate(270deg);
-  transition: .3s ease-out;
+  transition: 0.3s ease-out;
 }
-
 .dropdown2:hover #drop-i {
   transform: rotate(360deg);
 }
-
 .dropdown2 .dropdwn-content2 {
   display: flex;
   justify-content: center;
@@ -154,53 +138,46 @@ nav {
 .dropdown2:hover .dropdwn-content2 {
   opacity: 1;
 }
-
 .dropdown2:hover .dropdwn-content2 a, .dropdown2:hover .dropdwn-content2 i {
   padding: 1rem 0rem;
   font-size: 1rem, 1vw, 4rem;
 }
-
 .dropdown2:hover .dropdwn-content2 a:hover, .dropdown2:hover .dropdwn-content2 i:hover {
-  color: #d82d2d;
+  color: rgb(216, 45, 45);
 }
 
 .search-container {
-  padding: .5rem;
+  padding: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
-
 .search-container .sarch {
   font-size: clamp(1rem, 0.8vw, 2rem);
 }
-
 .search-container .search {
   width: 100%;
 }
-
 .search-container input[type=search] {
   opacity: 0;
   width: 0%;
-  padding: .5rem 0rem;
+  padding: 0.5rem 0rem;
   border: 1px solid rgba(0, 0, 0, 0.171);
-  border-radius: .3rem;
-  color: #d82d2d;
+  border-radius: 0.3rem;
+  color: rgb(216, 45, 45);
   font-size: 1rem;
   outline: none;
   transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-  caret-color: #d82d2d;
+  caret-color: rgb(216, 45, 45);
 }
-
 .search-container:hover input[type=search] {
   opacity: 1;
   width: 85%;
 }
-
-.search-container:hover input[type=search] input[type="search"]::-webkit-search-cancel-button,
-.search-container:hover input[type=search] input[type="search"]::-webkit-search-results-button,
-.search-container:hover input[type=search] input[type="search"]::-webkit-search-results-decoration {
+.search-container:hover input[type=search] input[type=search]::-webkit-search-cancel-button,
+.search-container:hover input[type=search] input[type=search]::-webkit-search-results-button,
+.search-container:hover input[type=search] input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -262,13 +239,11 @@ nav {
     margin-left: 1rem;
   }
 }
-
 @media (max-width: 900px) and (min-width: 660px) and (orientation: landscape) {
   nav {
     height: 15vh;
   }
 }
-
 @media (min-width: 720px) and (max-width: 1030px) {
   .search-container {
     display: none;
@@ -277,36 +252,31 @@ nav {
     display: none;
   }
 }
-
 footer {
   width: 100%;
   height: 10vh;
-  background-color: #0e1015;
+  background-color: rgb(14, 16, 21);
   color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
 }
-
 footer .footer-text {
   width: auto;
   height: auto;
 }
-
 footer .footer-social {
   width: auto;
   height: auto;
 }
-
 footer .footer-social i {
-  margin: 0rem .5rem;
+  margin: 0rem 0.5rem;
   font-size: 1.3rem;
-  transition: all .3s ease-in;
+  transition: all 0.3s ease-in;
 }
-
 footer .footer-social i:hover {
-  color: #d82d2d;
+  color: rgb(216, 45, 45);
 }
 
 /**
@@ -321,10 +291,9 @@ footer .footer-social i:hover {
     height: 15vh;
     flex-direction: column;
     text-align: center;
-    padding: 0rem .5rem;
+    padding: 0rem 0.5rem;
   }
 }
-
 /* 
 ##Device = Low Resolution Tablets, Mobiles (Landscape)
 ##Screen = 481px to 767px
@@ -334,7 +303,6 @@ footer .footer-social i:hover {
     height: 20vh;
   }
 }
-
 /* 
 ##Device = Tablets, Ipads (portrait)
 ##Screen =  768px to 1024px
@@ -344,7 +312,6 @@ footer .footer-social i:hover {
     height: 10vh;
   }
 }
-
 /* 
 ##Device = Tablets, Ipads (landscape)
 ##Screen = B/w 768px to 1024px
@@ -367,9 +334,8 @@ footer .footer-social i:hover {
   height: 100vh;
   position: relative;
 }
-
 .contact-container::before {
-  content: '';
+  content: "";
   width: inherit;
   height: 65%;
   background: url(../Images/Background/MostPlayedAgents.jpg) no-repeat 50% 35%;
@@ -377,25 +343,22 @@ footer .footer-social i:hover {
   position: absolute;
   z-index: -1;
 }
-
 .contact-container .contact-content {
   width: inherit;
   height: inherit;
   position: relative;
 }
-
 .contact-container .contact-content::before {
-  content: '';
+  content: "";
   width: 10%;
   height: 75%;
-  background-color: #d82d2d;
+  background-color: rgb(216, 45, 45);
   position: absolute;
   top: 50%;
   left: 45%;
   transform: translate(-50%, -45%);
   z-index: 2;
 }
-
 .contact-container .contact-content .contact-img {
   width: 15%;
   height: 40%;
@@ -406,12 +369,10 @@ footer .footer-social i:hover {
   transform: translate(-35%, -35%);
   z-index: 3;
 }
-
 .contact-container .contact-content .contact-img img {
   width: 100%;
   height: 100%;
 }
-
 .contact-container .contact-content .contact-text {
   width: 20%;
   height: 40%;
@@ -420,7 +381,7 @@ footer .footer-social i:hover {
   align-items: flex-start;
   flex-direction: column;
   padding: 1rem 2rem;
-  background-color: #0d0d1c;
+  background-color: rgb(13, 13, 28);
   position: absolute;
   top: 70%;
   left: 56%;
@@ -428,20 +389,17 @@ footer .footer-social i:hover {
   z-index: 3;
   color: white;
 }
-
 .contact-container .contact-content .contact-text h2 {
   font-size: clamp(1rem, 2rem, 3vw);
   margin: 1rem 0rem;
 }
-
 .contact-container .contact-content .contact-text p {
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   font-family: "Open Sans", sans-serif;
 }
-
 .contact-container .contact-content .contact-text .socials i {
   font-size: 1.3rem;
-  margin: 1rem .5rem;
+  margin: 1rem 0.5rem;
 }
 
 /**
@@ -481,15 +439,14 @@ footer .footer-social i:hover {
     margin: 1rem 0rem;
   }
   .contact-container .contact-content .contact-text p {
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
     font-family: "Open Sans", sans-serif;
   }
   .contact-container .contact-content .contact-text .socials i {
     font-size: 1.3rem;
-    margin: 1rem .5rem;
+    margin: 1rem 0.5rem;
   }
 }
-
 /* 
 ##Device = Low Resolution Tablets, Mobiles (Landscape)
 ##Screen = 481px to 767px
@@ -515,7 +472,6 @@ footer .footer-social i:hover {
     transform: translate(-75%, -65%);
   }
 }
-
 /* 
 ##Device = Tablets, Ipads (portrait)
 ##Screen =  768px to 1024px
@@ -544,7 +500,6 @@ footer .footer-social i:hover {
     transform: translate(-80%, -70%);
   }
 }
-
 /* 
 ##Device = Tablets, Ipads (landscape)
 ##Screen = B/w 768px to 1024px
@@ -573,7 +528,6 @@ footer .footer-social i:hover {
     transform: translate(-80%, -70%);
   }
 }
-
 /* 
 ##Device = Laptop(portrait)
 ##Screen = B/w 1200px to 1450px
